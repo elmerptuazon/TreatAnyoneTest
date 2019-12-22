@@ -1,3 +1,28 @@
 
+<% flash.each do |key, value| %>
+    <h1 class="alert alert-<%= key %>"><%= value %></h1>
+<% end %>
 <h1>Hello, Rails!</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Details</th>
+    <th></th>
+  </tr>
+ 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= article.text %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Register', new_user_path %>
+<%= link_to 'Login', '/login' %>
+
+<%-# comment here -%>
+<%-# link_to 'My Blog', controller: 'articles' -%>

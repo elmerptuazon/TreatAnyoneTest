@@ -1,0 +1,23 @@
+<%= form_with scope: :user, url: users_path, local: true do |form| %>
+    
+    <p>
+      <%= form.label :username %><br>
+      <%= form.text_field :username %>
+    </p>
+
+    <p>
+      <%= form.label :email %><br>
+      <%= form.email_field  :email %>
+    </p>
+   
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field  :password_digest %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', root_path %>

@@ -1,0 +1,17 @@
+<%= form_with scope: :user, url: '/loginCheck', local: true do |form| %>
+    <p>
+      <%= form.label :email %><br>
+      <%= form.email_field  :email %>
+    </p>
+   
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field  :password_digest %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
+
+  <%= link_to 'Back', root_path %>

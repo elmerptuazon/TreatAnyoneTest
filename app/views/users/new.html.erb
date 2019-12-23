@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+  <h1 class="alert alert-<%= key %>"><%= value %></h1>
+<% end %>
+
 <%= form_with scope: :user, url: users_path, local: true do |form| %>
     
     <p>

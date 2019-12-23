@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if @user.present?
             pw = @user.password_digest == params[:user][:password_digest] ? true : false
             if pw
-                redirect_to user_articles_path(@user.id)
+                redirect_to user_articles_path(@user.id), id: @user.id
             else
                 flash[:danger] = 'Incorrect Login Credentials'
                 redirect_to root_path

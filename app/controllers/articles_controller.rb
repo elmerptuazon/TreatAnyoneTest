@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 
     def index
+        @customID = params[:user_id]
         @articles = Article.all
     end
 
@@ -19,7 +20,6 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(article_params)
- 
         @article.save
         redirect_to @article
     end
@@ -43,7 +43,7 @@ class ArticlesController < ApplicationController
 
     private
         def article_params
-            params.require(:article).permit(:title, :text)
+            params.require(:article).permit(:title, :text, :summary)
         end
 
 end

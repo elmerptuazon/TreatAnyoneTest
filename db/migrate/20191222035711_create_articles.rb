@@ -5,6 +5,8 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.text :text
 
       t.timestamps
+
+      remove_reference :articles, :summary, index: true, foreign_key: true
     end
   end
 end
